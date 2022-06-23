@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 2 | Dispelling the Ideal Independent Voltage Source Misconception
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 2: Dispelling the Ideal Independent Voltage Source Misconception</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>You will find at least one voltage source in almost every circuit you will encounter in a basic circuit analysis course.
+                    Voltage sources are typically modeled as ideal independent voltage sources. To be sure, there are so‐called
+                    dependent voltage sources, but such sources are depicted with a diamond instead of a circle. Many errors in circuit
+                    analysis are made based on a misunderstanding of how to model an ideal independent voltage source. Let’s make
+                    certain going forward that we understand the model. Consider the circuit below consisting of an ideal independent
+                    voltage source and a single resistor, R.</p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        <label for="Vs-summary">Select all of the following that are true regarding the circuit above.</label>
+                        {{ form.choice }}
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

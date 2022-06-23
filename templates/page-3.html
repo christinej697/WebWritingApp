@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+Page-3
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page3">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h2>Writing Exercise</h2>
+        </div>
+
+        <div class="prob-display">
+
+            <form method="post">{% csrf_token %}
+                <div class="question" id="ques-3">
+                    <p><em>Now that you have answered the question, rate your perceived ability to correctly answer the
+                        question by selecting the appropriate response.</em></p>
+                    <!-- <input type="text" class="input" id="ques-3-input" autocomplete="off"> -->
+                    {{ form.post_confidence | add_class:'input' }}
+                    <label for="ques-3-input"></label>
+                </div>
+                
+                <div class="question" id="ques-4">
+                    <p><em> Now that you have completed the problem, rate your perceived ability to meaningfully answer the question in which a rating of 100% indicates you are certain you meaningfully answered the question.</em></p>
+                    <!-- <input type="text" class="input" id="ques-4-input" autocomplete="off"> -->
+                    {{ form.post_ability | add_class:'input' }}
+                    <label for="ques-4-input">%</label>
+                </div>
+
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="final-btn" name="Submit"/>
+                </div>
+            </form>
+
+        </div>
+        
+    </div>
+
+</div>
+{% endblock content %}

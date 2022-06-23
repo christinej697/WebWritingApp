@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}
+Page-1
+{% endblock title %}
+
+{% block content %}
+<div class="login active">
+    
+    <div class="prob-title">
+        <h2>Writing Exercise {{ user.focus_req }}</h2>
+    </div>
+
+        <div class="prob-display">
+            
+            <div class="problem-statement">
+                <p>Consider the circuit shown below and assume that the elements are ideal. <strong><em>Explain what happens to the power associated with V<sub>S</sub>, R<sub>1</sub>, R<sub>2</sub>, and R<sub>3</sub> as the resistance of R<sub>2</sub> decreases while the other component values (V<sub>S</sub>, R<sub>1</sub>, and R<sub>3</sub>) remain unchanged. </em></strong>Thoroughly explain the rationale supporting your conclusions, using equations only as necessary. Write in complete sentences.</p>
+            </div>
+
+            <div class="circuit-image">
+                <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+            </div>
+
+            <div class="secondary-problem-statement">
+                <p>It is your <u>thought process</u> that is the most important, so write what you are thinking and respond to all prompts given. You will have approximately fifteen minutes to complete the problem.</p>
+            </div>
+            
+            <div class="question">
+                <p>(1)<em> Rate your perceived ability to correctly answer the question by selecting the appropriate response.</em></p>
+                <form method="post">{% csrf_token %}
+                    {{ form.pre_confidence }}
+                    <label for="ques-1-input"></label>
+                    <br><br>
+
+                    <p>(2)<em> Rate your perceived ability to meaningfully answer the question in which a rating of 100% indicates you are certain you will be able to meaningfully answer the question. Enter the percentage in the box below.</em></p>
+                    {{ form.pre_ability | add_class:'input' }}
+                    <label for="ques-2-input">%</label>
+
+                    <div class="sub-btn">
+                        <input type="submit" class="prob-btn btn" id="prob-btn-1" name="Submit"/>
+                    </div>
+                </form>
+                <!-- <input type="text" class="input" id="ques-2-input" autocomplete="off">
+                <label for="ques-2-input">%</label> -->
+            </div>
+              
+        </div>
+        
+    </div>
+
+</div>
+{% endblock content %}

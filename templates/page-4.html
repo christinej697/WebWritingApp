@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+<!-- <pre>{% filter force_escape %}{% debug %}{% endfilter %}</pre> -->
+
+{% block title %}
+Page-4
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page4" id="page-4">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h2>Writing Exercise</h2>
+        </div>
+        
+        <div class="prob-display display-4">
+            <div class="primary-response">
+                <p><em>Your response:</em></p>
+                <p class="response">
+                    <!-- {{ user_answer }} -->
+                    {% if user.focus_req %}
+                        {% for sentence in user_answer %}
+                                <a id="focus-btn" class="eqn-btn btn" class="sentences" href="#"> {{ sentence }}. </a>
+                        {% endfor %}
+                    {% else %}
+                        {% for sentence in user_answer %}
+                            <mark id="sentences" class="sentences"> {{ sentence }} </mark>
+                        {% endfor %}
+                    {% endif %}
+                </p>
+                <!-- <p class="response">need to edit text content using js</p>                 -->
+            </div>
+            
+            <form method="post">{% csrf_token %}
+                <div class="question" id="ques-5">
+                    <p><em>Read through your response shown above. Identify the sentence from your response with which you have the <b>least</b> confidence and explain why you question its accuracy. (You may click on a response sentence to insert it.)</em></p>
+                    {{ form.least_confident }}
+                    <!-- <textarea class="end-textarea" id="least-input" rows="3" columns="60" autocomplete="off"></textarea> -->
+                </div>
+                
+                <div class="question" id="ques-6">
+                    <p><em>Read through your response at the top of the page. Identify the sentence from your response with which you have the <b>most</b> confidence and explain why you question its accuracy. (You may click on a response sentence to insert it.)</em></p>
+                    {{ form.most_confident }}
+                    <!-- <textarea class="end-textarea" id="most-input" rows="3" columns="60" autocomplete="off"></textarea> -->
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="last-btn" name="Submit"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

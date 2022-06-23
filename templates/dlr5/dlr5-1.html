@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 5 | Dispelling Resistor Combination Errors
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 5: Dispelling Resistor Combination Errors</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>
+                    Combining resistors that are in series or parallel is a strategy that is often helpful in analyzing circuits with a single
+                    source and multiple resistors. To do so successfully requires that one properly identifies when resistors are in series or
+                    in parallel. Let's start with a series connection. While it is sometimes the case that resistors that are in series are tied
+                    together at one node, this is neither a necessary nor sufficient condition. Consider the following two circuit in which we
+                    will try to identify resistors that are in series.
+                </p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+
+            </div>
+
+            <div class="problem-statement">
+                <p>
+                    In the circuit on the left, there is only one current. This current is the same in the voltage source and the three
+                    resistors; no matter where the current is measured, one would get the same value. For elements to be in series, they
+                    must share the same current. This is the necessary and sufficient condition. Therefore, all four elements in the circuit
+                    on the left are in series. When simplifying circuits using series combinations, we deal with resistors. Therefore we
+                    focus on the fact that resistors A, B, and C are in series. Notice that while resistors A and B are tied together at one
+                    node resistors A and C are not even though resistors A and C are in series. Again, we are looking for resistors that
+                    share the same current. Let's keep this in mind when considering the circuit on the right.
+                </p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        <label for="Vs-summary">Select all of the following that are true with regard to the resistors in the circuit to the right.</label>
+                        {{ form.choice }}
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

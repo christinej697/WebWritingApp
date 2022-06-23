@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 3 | Dispelling the Sequential Misconception
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 3: Dispelling the Sequential Misconception</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>It is not uncommon for the student to exhibit a so-called “sequential “
+                    misconception in explaining the behavior of a circuit such as we are
+                    considering. Based on your response, we want to make sure you think of
+                    a circuit more of a system than as a simple connection of independent
+                    elements. Here is the circuit again in which we are to address what
+                    happens to the power in all four elements when the resistance of <em>R<sub>2</sub></em>
+                    decreases.</p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+            </div>
+
+            <div class="problem-statement">
+                <p>
+                    Someone displaying sequential reasoning might say that “since resistor
+                    <em>R<sub>2</sub></em> comes after <em>R<sub>1</sub></em> in the circuit”, or since “<em>R<sub>2</sub></em> is further downstream than
+                    <em>R<sub>1</sub></em>” the voltage and current associated with <em>R<sub>1</sub></em> are not affected by
+                    changes in <em>R<sub>2</sub></em>. Such an explanation is contrary to what actually occurs in
+                    the circuit with changes in the value of <em>R<sub>2</sub></em>. Let's try to understand the
+                    situation more correctly by beginning with an exploration of what the
+                    ideal independent voltage source does in the circuit as misconceptions in
+                    how to model the voltage source may also come into play with the
+                    sequential misconception.
+                </p>
+                <p>
+                    We are told that the voltage source is an ideal independent voltage
+                    source, but what does this mean? The key to remember is that an ideal
+                    independent voltage source maintains a constant potential difference
+                    across its terminals regardless of what elements are connected to it.
+                    That is, in the circuit in question we can be confident that the top
+                    terminal of the voltage source is precisely <em>V<sub>s</sub></em> volts above its lower
+                    terminal. Even as <em>R<sub>2</sub></em> changes, the voltage source will maintain this
+                    potential difference across its own terminals. While the voltage
+                    difference <em>V<sub>s</sub></em> doesn't change, the current and the power associated with
+                    the ideal independent voltage source may change. Let's think about
+                    what this potential difference supplied by a voltage source does in a
+                    resistive circuit.
+                </p>
+                <p>
+                    So not to miss the point we want to make, let's consider first a somewhat simpler circuit as shown below. The circuit
+                    contains an ideal independent source and two resistors forming a single loop circuit.
+                </p>
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    </div>
+                </div>
+                <figure>
+                    <figcaption><em>Since there is a complete loop, charge will flow and since there is but one voltage source, conventional current will be clockwise. What is the relationship between currents I<sub>s</sub>, I<sub>x</sub> and I<sub>y</sub>?</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Since <em>I<sub>x</sub></em> comes after resistor <em>R<sub>x</sub></em> and <em>I<sub>y</sub></em> comes after both <em>R<sub>x</sub></em> and <em>R<sub>y</sub></em>, <em>I<sub>s</sub>>I<sub>x</sub>>I<sub>y</sub></em>.</li>
+                        <li><em>I<sub>s</sub>=I<sub>x</sub>=I<sub>y</sub></em>.</li>
+                        <li>Neither of the above is true.</li>
+                    </ol>
+                </figure>
+                <p>
+                    Ohm's Law states that current associated with a resistor is the potential difference across a given resistor divided by the resistance. In this case, a total potential difference of <em>V<sub>s</sub></em> drops across a net resistance of <em>R<sub>x</sub>+R<sub>y</sub></em> and therefore, <em>I<sub>s</sub> = V<sub>s</sub>/(R<sub>x</sub>+R<sub>y</sub>)</em>. Since current is the same on both sides of a resistor (neither charge nor current is used up in a resistor),indeed, <em>I<sub>s</sub>=I<sub>x</sub>=I<sub>y</sub></em> in the above circuit. To continue to develop a deeper understanding of the situation and how things might change as a value of a resistor changes, we need to think about surface charge. It is surface charge on the conductors and wires which drives the flow of charge in the wires and resistors.
+                </p>
+                <p>
+                    The potential difference across the voltage source causes surface charges in the wires to shift slightly. Thearrangement of surface charge happens instantaneously and is what creates the electric fields in the wires andresistors that drives charge flow in a given direction resulting in electric current. Since both <em>R<sub>x</sub></em> and <em>R<sub>y</sub></em> carry the same current in the circuit in question and if they have different resistance values, surface charge will arrange such that thepotential difference across the higher-valued resistor will be larger. It takes more “push” to drive current through alarger-valued resistor. To make matters more concrete, let's assume that <em>V<sub>s</sub> = 10V, R<sub>x</sub> = 500 W</em> and <em>R<sub>y</sub> = 500 W</em>. Since the resistors are of equal value, they will have the same potential difference. The circuit below represents the case.
+                </p>
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    </div>
+                </div>
+                <figure>
+                    <figcaption><em>Both resistors carry 10 mA of current (10V/1000W), and since they are equal-value both have half of the source's potential difference. Now let's speculate on what will happen in the circuit if the value of Ry is changed to 300W with no other changes made to the circuit. Select all the following that are true.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Since R<sub>x</sub> comes before R<sub>y</sub>, R<sub>x</sub> will require more potential difference than does R<sub>y</sub></li>
+                        <li>The overall resistance in the circuit has decreased and so neither resistor needs as mouch potential difference.</li>
+                        <li>The current in the circuit will increase.</li>
+                    </ol>
+                </figure>
+                <p>
+                    While it is true that resistor R<sub>x</sub> will have a greater potential difference than resistor R<sub>y</sub>, this is due to the fact that the two resistors share the same current and resistor R<sub>x</sub> is a larger value -- it has nothing to do with the relative positions of the two resistors.
+                </p>
+                <p>
+                    Since the effective resistance seen by the source decreases, the current in the circuit increases. This is a single loop circuit and so all three elements carry the same current. It takes a greater potential difference to enable a given value of current to exist in a larger value resistor than a small value resistor. Therefore, more of the potential difference from the voltage source will drop across R<sub>x</sub> than across R<sub>y</sub>. The sketch below shows the values of current and potential difference with the change in the value of R<sub>2</sub>. Cleary, with a change in R<sub>y</sub> while, 10V still drops across the two resistors, the distribution of the potential difference values change.
+                </p>
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    </div>
+                </div>
+                <p><em>Ok, so let's summarize a few things we have learned</em></p>
+                <p>
+                    (1) We want to think of a circuit as a system - changes in a given part of a circuit may have an impact on every element in a circuit.
+                </p>
+                <p>
+                    (2) An ideal independent voltage source exhibits a constant potential difference across its terminals regardless of what is happening in a circuit.
+                </p>
+                <p>
+                    (3) The current associated with an ideal independent voltage source will change if the effective resistance the source "sees" changes.
+                </p>
+                <p>
+                    (4) The larger the resistance, the greater amount of potential difference it takes to drice a given current in the resistor.
+                </p>
+                <p>Let's take another look at the original circuit and reason out what happens when R<sub>2</sub> decreases.</p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Go to next misconception"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 3 | Dispelling the Sequential Misconception
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 3: Dispelling the Sequential Misconception</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>It is not uncommon for the student to exhibit a so-called “sequential “
+                    misconception in explaining the behavior of a circuit such as we are
+                    considering. Based on your response, we want to make sure you think of
+                    a circuit more of a system than as a simple connection of independent
+                    elements. Here is the circuit again in which we are to address what
+                    happens to the power in all four elements when the resistance of <em>R<sub>2</sub></em>
+                    decreases.</p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+            </div>
+
+            <div class="problem-statement">
+                <p>
+                    Someone displaying sequential reasoning might say that “since resistor
+                    <em>R<sub>2</sub></em> comes after <em>R<sub>1</sub></em> in the circuit”, or since “<em>R<sub>2</sub></em> is further downstream than
+                    <em>R<sub>1</sub></em>” the voltage and current associated with <em>R<sub>1</sub></em> are not affected by
+                    changes in <em>R<sub>2</sub></em>. Such an explanation is contrary to what actually occurs in
+                    the circuit with changes in the value of <em>R<sub>2</sub></em>. Let's try to understand the
+                    situation more correctly by beginning with an exploration of what the
+                    ideal independent voltage source does in the circuit as misconceptions in
+                    how to model the voltage source may also come into play with the
+                    sequential misconception.
+                </p>
+                <p>
+                    We are told that the voltage source is an ideal independent voltage
+                    source, but what does this mean? The key to remember is that an ideal
+                    independent voltage source maintains a constant potential difference
+                    across its terminals regardless of what elements are connected to it.
+                    That is, in the circuit in question we can be confident that the top
+                    terminal of the voltage source is precisely <em>V<sub>s</sub></em> volts above its lower
+                    terminal. Even as <em>R<sub>2</sub></em> changes, the voltage source will maintain this
+                    potential difference across its own terminals. While the voltage
+                    difference <em>V<sub>s</sub></em> doesn't change, the current and the power associated with
+                    the ideal independent voltage source may change. Let's think about
+                    what this potential difference supplied by a voltage source does in a
+                    resistive circuit.
+                </p>
+                <p>
+                    So not to miss the point we want to make, let's consider first a somewhat simpler circuit as shown below. The circuit
+                    contains an ideal independent source and two resistors forming a single loop circuit.
+                </p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        <label for="Vs-summary">Since there is a complete loop, charge will flow and since there is but one voltage source, conventional current will be
+                            clockwise. What is the relationship between currents <em>I<sub>s</sub></em>, <em>I<sub>x</sub></em> and <em>I<sub>y</sub></em>?</label>
+                        {{ form.choice }}
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

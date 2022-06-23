@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+Log-In
+{% endblock title %}
+
+{% block content %}
+<div class="app-title" style="margin: auto;">
+  <h1>Writing Exercise HeeHee</h1>
+</div>
+
+<div class="submit-form">
+    <!--  <div class="first-name">
+          <input type="text" class="first-name-input" placeholder="First name" required>
+      </div>
+      <div class="last-name">
+          <input type="text" class="last-name-input" placeholder="Last name" required>
+      </div> -->
+      
+      <!-- <div class="id-form">
+          <input type="text" class="id-input" placeholder="Student ID" required autocomplete="off">
+      </div>
+      <div class="sub-btn">
+          <a href="#" class="submit-btn btn">Submit</a>
+      </div> -->
+      
+      <!-- <form method="post" action="page-1">{% csrf_token %}
+        <input type="text" class="id-input" placeholder="Student ID" required autocomplete="off">
+        <div class="sub-btn">
+            <input type="submit" class="submit-btn btn" name="Submit"/>
+        </div>
+      </form> -->
+      <form method="post">{% csrf_token %}
+          <!-- <div>{{ form.username | add_class:'id-input' | attr:"placeholder:Student ID" }}</div>
+          <div>{{ form.password | add_class:'id-input' | attr:"placeholder:Password" }}</div> -->
+          {{ form.as_p }}
+          <div class="sub-btn">
+            <input type="submit" class="submit-btn btn" name="Submit"/>
+          </div>
+            <!-- <button type="submit" class="submit-btn btn">Submit</button> -->
+      </form>
+      
+  </div>
+{% endblock content %}

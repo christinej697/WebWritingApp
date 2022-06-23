@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 4 | Dispelling the Constant Voltage Drop Error
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 4: Dispelling the Constant Voltage Drop Error</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>Let's start off with a question. Select all of the following that are true as the value of R2 decreases in the circuit below.</p>
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    </div>
+                </div>
+                <figure>
+                    <figcaption><em>Select all of the following that are true about power in the above circuit.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Power is energy per unit time.</li>
+                        <li>The voltage source supplies power in the above circuit.</li>
+                        <li>The resistors dissipate power in the above circuit.</li>
+                        <li>The total amount of power dissipated by the three resistors must precisely equal the amount of power provided by the source.</li>
+                    </ol>
+                </figure>
+            </div>
+
+            <div class="problem-statement">
+                <hr>
+                <p>
+                    All three of the above statements are false, and notice, they all are based on the assumption that the voltage drop across
+                    R<sub>2</sub> or R<sub>3</sub> remains constant as the value of R<sub>2</sub> decreases. The only element in the circuit that has a potential difference that
+                    does not change as the value of R<sub>2</sub> changes is the ideal independent voltage source. Indeed, this is in essence the
+                    definition of such a source -- it provides a constant potential difference across its terminals regardless of the circuit to
+                    which it is connected. We cannot extend the idea of a constant potential difference to the remainder of the elements
+                    however as we will see through the following argument. Let's redraw the circuit, labeling potential differences.
+                </p>
+            </div>
+
+            <div class="problem-statement">
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    </div>
+                </div>
+                <p><em>Point 1</em>: Let's start by assuming (incorrectly) that the voltage drop across resistor R<sub>3</sub> remains constant. If this is the case,
+                    since the value of R<sub>3</sub> does not change in the stated problem, Ohm's law suggests that the current in resistor 3 is constant.
+                    That is, I<sub>3</sub> = V<sub>3</sub>/R<sub>3</sub> would be a constant.
+                </p>
+                <p><em>Point 2</em>: Since R<sub>2</sub> and R<sub>3</sub> are tied together at both nodes, the are in parallel. Elements in parallel, share a common potential
+                    difference and so V<sub>2</sub> = V<sub>3</sub>. These two sentences are correct.
+                </p>
+                <p><em>Point 3</em>: Since we argued in Point 1 that the potential across resistor 3 remains constant, and as Point 2 indicates,
+                    resistor 2 and resistor 3 have the same potential difference, V<sub>2</sub> = V<sub>3</sub> = a constant. This would suggests that as the value
+                    of R<sub>2</sub> decreases, Ohm's law reveals that the current in R<sub>2</sub> increases as I<sub>2</sub> = V<sub>2</sub>/R<sub>2</sub>.
+                </p>
+                <p><em>Point 4</em>: 
+                    Applying KCL to the node connecting the three resistors, we see that I<sub>1</sub> = I<sub>2</sub> + I<sub>3</sub>. This is a correct application
+                    of KCL. Since we have I<sub>3</sub> as a constant and I<sub>2</sub> as increasing, I<sub>1</sub> must increase to satisfy KCL. Ohm's law applied to
+                    resistor R<sub>1</sub> requires V<sub>1</sub> = I<sub>1</sub>R<sub>1</sub>. Since R<sub>1</sub> remains constant and I<sub>1</sub> increases, this would suggest that V<sub>1</sub> would have had
+                    to increase to drive a larger current through R<sub>1</sub>. This seems to go against the original notion of the voltage drop
+                    across a resistor not changing as R<sub>2</sub> changes, but let's run with the idea and see where it takes us.
+                </p>
+                <p><em>Point 5</em>: 
+                    So our arguments have led us to the following: V<sub>1</sub> increasing and V<sub>2</sub> and V<sub>3</sub> remaining constant as the value
+                    of R<sub>2</sub> decreases. Let's apply the fundamental circuit law that relates potential differences around a loop, KVL.
+                    Summing voltage drops going clockwise around the inner loop and setting the sum to zero, we find: -V<sub>s</sub> + V<sub>1</sub> + V<sub>2</sub> = 0
+                </p>
+                <hr>
+                <figure>
+                    <figcaption><em>Select the correct statement in considering our arguments when applying KVL.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Application of KVL has validated our arguments in Points 1-4.</li>
+                        <li>Application of KVL has demonstrated that there is a conflict arising from our arguments in Points 1-4.</li>
+                    </ol>
+                </figure>
+                <hr>
+                <p>
+                    While our application of KVL is correct, there is indeed a conflict between the results of this fundamental circuit law
+                    and what we argued in Points 1-4. Since in stepping through Points 1-4 we are claiming that two of the three terms
+                    are constant (i.e. V<sub>s</sub> and V<sub>2</sub>), and one variable (V<sub>1</sub>), the equation will not properly balance as R<sub>2</sub> changes. We know
+                    by definition that V<sub>s</sub> must remain a constant as it is the potential difference across an ideal independent voltage
+                    source. Our error therefore was to claim at the outset that the voltage drop across R<sub>3</sub> and thus R<sub>2</sub> is constant.
+                </p>
+                <p>
+                    What are we to take from all of this? While the potential difference across the ideal voltage source is constant as
+                    R<sub>2</sub> decreases, the manner in which this potential difference distributes across R<sub>1</sub> and the parallel combination of R<sub>2</sub>
+                    and R<sub>3</sub> depends on the values of these three resistors.
+                </p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Go to next misconception"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

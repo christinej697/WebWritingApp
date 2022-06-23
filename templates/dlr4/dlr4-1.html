@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 4 | Dispelling the Constant Voltage Drop Error
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 4: Dispelling the Constant Voltage Drop Error</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>Let's start off with a question. Select all of the following that are true as the value of R2 decreases in the circuit below.</p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        {{ form.choice }}
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

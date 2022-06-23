@@ -1,0 +1,32 @@
+from django.urls import path
+from .views import (DLR1_1TemplateView, DLR1_1FormView, DLR1_ATemplateView, DLR1_BTemplateView, 
+                    DLR2_1FormView, DLR2_2TemplateView, DLR3_1FormView, DLR3_2aFormView,
+                    DLR3_2bFormView, DLR3_2cFormView, DLR3_3aTemplateView, DLR3_3bTemplateView,
+                    DLR3_3cTemplateView, DLR4_1FormView, DLR4_2FormView, DLR4_3TemplateView,
+                    DLR5_1FormView, DLR5_2TemplateView, DLR6_1TemplateView, DLR7_1FormView,
+                    DLR7_2TemplateView, DLR8_1aFormView, DLR8_1bFormView)
+
+urlpatterns = [
+    path('dlr1-1', DLR1_1FormView.as_view(), name="dlr1-1"),
+    path('dlr1-a', DLR1_ATemplateView.as_view(), name='dlr1-a'),
+    path('dlr1-b', DLR1_BTemplateView.as_view(), name="dlr1-b"),
+    path('dlr2-1', DLR2_1FormView.as_view(), name="dlr2-1"),
+    path('dlr2-2', DLR2_2TemplateView.as_view(), name='dlr2-2'),
+    path('dlr3-1', DLR3_1FormView.as_view(), name='dlr3-1'),
+    path('dlr3-2a', DLR3_2aFormView.as_view(), name='dlr3-2a'),
+    path('dlr3-2b', DLR3_2bFormView.as_view(), name='dlr3-2b'),
+    path('dlr3-2c', DLR3_2cFormView.as_view(), name='dlr3-2c'),
+    path('dlr3-3a', DLR3_3aTemplateView.as_view(), name='dlr3-3a'),
+    path('dlr3-3b', DLR3_3bTemplateView.as_view(), name='dlr3-3b'),
+    path('dlr3-3c', DLR3_3cTemplateView.as_view(), name='dlr3-3c'),
+    path('dlr4-1', DLR4_1FormView.as_view(), name='dlr4-1'),
+    path('dlr4-2', DLR4_2FormView.as_view(), name='dlr4-2'),
+    path('dlr4-3', DLR4_3TemplateView.as_view(), name="dlr4-3"),
+    path('dlr5-1', DLR5_1FormView.as_view(), name='dlr5-1'),
+    path('dlr5-2', DLR5_2TemplateView.as_view(), name='dlr5-2'),
+    path('dlr6-1', DLR6_1TemplateView.as_view(), name='dlr6-1'),
+    path('dlr7-1', DLR7_1FormView.as_view(), name='dlr7-1'),
+    path('dlr7-2', DLR7_2TemplateView.as_view(), name='dlr7-2'),
+    path('dlr8-1a', DLR8_1aFormView.as_view(), name="dlr8-1a"),
+    path('dlr8-1b', DLR8_1bFormView.as_view(), name='dlr8-1b'),
+]

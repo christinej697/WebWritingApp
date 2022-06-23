@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 8 | The Correct Solution Process
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR Path 8 : The Correct Solution Process</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>
+                    We will now work through one way of understanding how to approach
+                    explaining what will happen to the power of the four elements as the
+                    value of R<sub>2</sub> decreases.
+                </p>
+                <p>
+                    Combining resistors is a fine way to start. Let's begin there.
+                </p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        <label for="Vs-summary">
+                            We are often able to simplify circuits by recognizing elements that are in series and elements that are in parallel. How do we know when elements are in series or in parallel and what electrical quantities do elements in each case share in common? Select all of the following that are true regarding series and parallel connections.
+                        </label>
+                        {{ form.choice }}
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

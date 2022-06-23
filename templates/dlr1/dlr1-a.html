@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 1 Dispelling the Localized Misconception
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 1: Dispelling the Localized Misconception</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>When beginning to study circuit analysis, it is not uncommon to have a very “localized” conception on how an electric
+                circuit works. In such outlook, one is inclined to think that if a change is made somewhere in the circuit, only the
+                element that is changed is impacted. Let's spend a couple of minutes making certain we look at a circuit as a system
+                and not simply a connection of independent elements. Here is the circuit again in which we are to address what
+                happens to the power in all four elements when the resistance of R2 decreases.</p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+
+            </div>
+            
+            <div class="problem-statement">
+                <p> Someone displaying localized reasoning in analyzing the above circuit might say that “as the value of R<sub>2</sub> decreases
+                    only the power of R<sub>2</sub> will be affected.” We can quickly argue against such reasoning by considering what is meant by
+                    power conservation in an electric circuit.
+                </p>
+                    <hr>
+                    <figure>
+                        <figcaption><em>Select all of the following that are true about power in the above circuit.</em></figcaption>
+                        <ol type="a" class="selection">
+                            <li>Power is energy per unit time.</li>
+                            <li>The voltage source supplies power in the above circuit.</li>
+                            <li>The resistors dissipate power in the above circuit.</li>
+                            <li>The total amount of power dissipated by the three resistors must precisely equal the amount of power provided by the source.</li>
+                        </ol>
+                    </figure>
+                    <hr>
+                    <h3>Your result:</h3>
+                    <p> <em>Correct</em>, all four statements are true</p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Go to next misconception"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

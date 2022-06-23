@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 5 | Dispelling Resistor Combination Errors
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 5: Dispelling Resistor Combination Errors</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>
+                    Combining resistors that are in series or parallel is a strategy that is often helpful in analyzing circuits with a single
+                    source and multiple resistors. To do so successfully requires that one properly identifies when resistors are in series or
+                    in parallel. Let's start with a series connection. While it is sometimes the case that resistors that are in series are tied
+                    together at one node, this is neither a necessary nor sufficient condition. Consider the following two circuit in which we
+                    will try to identify resistors that are in series.
+                </p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+
+            </div>
+
+            <div class="problem-statement">
+                <p>
+                    In the circuit on the left, there is only one current. This current is the same in the voltage source and the three
+                    resistors; no matter where the current is measured, one would get the same value. For elements to be in series, they
+                    must share the same current. This is the necessary and sufficient condition. Therefore, all four elements in the circuit
+                    on the left are in series. When simplifying circuits using series combinations, we deal with resistors. Therefore we
+                    focus on the fact that resistors A, B, and C are in series. Notice that while resistors A and B are tied together at one
+                    node resistors A and C are not even though resistors A and C are in series. Again, we are looking for resistors that
+                    share the same current. Let's keep this in mind when considering the circuit on the right.
+                </p>
+                <hr>
+                <figure>
+                    <figcaption><em>Select all of the following that are true with regard to the resistors in the circuit to the right.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Resistors D and E are tied together at one node.</li>
+                        <li>Resistors D and E are in series.</li>
+                        <li>Resistors D and F are tied together at one node.</li>
+                        <li>Resistors D and F are in series.</li>
+                        <li>Resistors D and G are tied together at one node.</li>
+                        <li>Resistors D and G are in series.</li>
+                    </ol>
+                </figure>
+                <hr>
+                <p>
+                    While it is true that resistors D and E are tied together at one node, these resistors are not in series as KCL at the node
+                    connecting resistors D and E reveals that I<sub>D</sub> = I<Sub>E</Sub> + I<sub>F</sub> and not that I<sub>D</sub> = I<sub>E</sub>. By similar reasoning, while resistors D and F
+                    share a single node, they are not in series. Note also that resistors E and F do not have the same current and so are
+                    not in series. Interestingly, the resistors that have no physical connection in the circuit, RE and RG, do share the same
+                    current (I<sub>G</sub>=I=I<sub>D</sub>) and so are in series.
+                </p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+            </div>
+
+            <div class="problem-statement">
+                <p>
+                    Using the identified series combinations we can model the original circuits (left circuits) with their simplified
+                    equivalents (right circuits) as follows.
+                </p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+            </div>
+
+            <div class="problem-statement">
+                <p>
+                    Notice that when combining resistors in series that the equivalent resistance is the sum of the series resistors. Series
+                    connections of resistors are therefore useful when we want to increase resistance. While we were able to reduce one
+                    of the circuits to a single resistor, we need to explore parallel combinations of resistors to reduce the second circuit
+                    further to achieve a single equivalent resistance. Notice that resistors E and F are tied together at two nodes.
+                    Resistors tied together at two nodes are in parallel and may be combined to achieve a single, equivalent resistance.
+                    To make the situation a bit more interesting when considering parallel combinations, let's explore two new circuits.
+                </p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+            </div>
+
+            <div class="problem-statement">
+                <p>
+                    In the circuit on the left, we have two resistors in parallel and in the circuit on the right, three resistors in parallel.
+                    Again, resistors in parallel are tied together at both ends -- they share two nodes. Where the beginning student may
+                    get into trouble is interpreting the formula for the equivalent resistance of resistors in parallel. Typically, the
+                    equivalent resistance formula is written in terms of conductances -- that is the inverse of resistance. Here are the
+                    formulas for the two circuits we are considering.
+                </p>
+                <p><span><em>R<sub>eq,left</sub>=(1/R<sub>1</sub>+1/R<sub>2</sub>)<sup>-1</sup></em></span> &emsp;&emsp;&emsp; <span><em>R<sub>eq,left</sub>=(1/R<sub>1</sub>+1/R<sub>2</sub>+1/R<sub>3</sub>)<sup>-1</sup></em></span></p>
+                <p>
+                    Notice that the circuit on the right is simply that on the left with resistor R3 added in parallel to the other parallel
+                    branches. By adding a third resistor, have we increased the resistance? Let's think about what the two formulas
+                    suggest. First, we compare the terms in the parentheses.
+                </p>
+                <p><em>R<sub>eq,left</sub>=(1/R<sub>1</sub>+1/R<sub>2</sub>)</em> &emsp;Vs.&emsp; <em>(1/R<sub>1</sub>+1/R<sub>2</sub>+1/R<sub>3</sub>)</em></p>
+                <p>
+                    Which term in the parentheses is larger? Clearly, the term on the right is larger as we have added a 1/R3 term. Does
+                    this mean by adding a third parallel branch that we have increased the resistance? Quite the opposite in fact. By
+                    adding a third branch we have increased the net conductance. To find the net resistance, we take the inverse of the
+                    net conductance and therefore,
+                </p>
+                <p><em>R<sub>eq,left</sub> > R<sub>eq,right</sub></em></p>
+                <p>
+                    Beyond analyzing the formula, how can we understand this? Resistor R3 was added in parallel thus providing charge
+                    another path through which to flow. This makes it easier for charge to flow, thus lowering the overall resistance.
+                    Let's put numbers to the two cases to verify this finding as well as to demonstrate a key idea to remember regarding
+                    parallel resistors.
+                </p>
+                <p>Let's assume <em>R<sub>1</sub> = 1000 &ohm;, R<sub>2</sub> = 2000 &ohm;,</em> and <em>R<sub>3</sub> = 3000 &ohm;</em>.</p>
+                <p><em>R<sub>eq,left</sub> = (1/1000 + 1/2000)<sup>-1</sup> ~ 667 &ohm;</em></p>
+                <p><em>R<sub>eq,right</sub> = (1/1000 + 1/2000 + 1/3000) ~ 545 &ohm;</em></p>
+                <p>
+                    As we expected, adding the third parallel branch reduced the overall resistance. Another item worth
+                    remembering is that the effective resistance of a parallel combination of resistors is always smaller than
+                    the smallest of the resistors comprising the parallel combination. In both cases above, since the smallest
+                    resistor value in the parallel combination is 1000 &ohm;, we know that the equivalent resistance of the parallel
+                    combination will be less than 1000 &ohm;.
+                </p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Go to next misconception"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

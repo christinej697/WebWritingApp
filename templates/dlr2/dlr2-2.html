@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 2 | Dispelling the Ideal Independent Voltage Source Misconception
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR 2: Dispelling the Ideal Independent Voltage Source Misconception</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>In the circuits below, the same 10V ideal independent voltage source is connected to a 100 Ohm resistor (left circuit)
+                    and a 1000 Ohm resistor (right circuit). In both cases, the voltage source maintains a 10V potential difference across
+                    its terminals and thus across the sole resistor in each circuit. What is different about the two cases? Ohm's law
+                    reveals that the circuit in the left has a current of 100 mA (10 V/100 &ohm;), whereas that on the right only 10 mA (10 V/
+                    1000 &ohm;).</p>
+            </div>
+
+            <div class="right">
+                <div class="circuit-image page2-img">
+                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                </div>
+
+            </div>
+            
+            <div class="problem-statement">
+                <p>
+                    In both cases, the potential difference across the voltage source is 10V with the plus side 10 V higher than the minus
+                    sign. The current associated with the source is different in the two cases. Thus, the correct way to model the ideal
+                    independent voltage source is just that, a source of a consistent potential difference across its terminals. The current
+                    associated with the voltage source will depend on the circuit to which the source is connected.
+                </p>
+                <p>
+                    What about power and the ideal independent voltage source? We know that for any element, P=VI. Therefore, for
+                    the circuit on the left, the ideal voltage source provides P= (10V)(0.1A)= 1 W of power. Since the circuit on the right
+                    has a current 1/10th that of the circuit on the left, the voltage source needs only to provide 0.1 W of power in that
+                    case.
+                </p>
+                <p>
+                    To summarize, an ideal independent voltage source provides a specific potential difference across its terminals
+                    regardless of the circuit to which it is connected. The current, and thus the power associated with the ideal
+                    independent voltage source will depend on the circuit to which the source is connected.
+                </p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Go to next misconception"/>
+                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

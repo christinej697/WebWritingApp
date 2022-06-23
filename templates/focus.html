@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+Log-In
+{% endblock title %}
+
+{% block content %}
+<div class="app-title" style="margin: auto;">
+  <h1>Do you require focus-based Interaction Input?</h1>
+</div>
+
+<div class="submit-form">
+      <form method="post">{% csrf_token %}
+          <!-- <div>{{ form.focus_req | add_class:'id-input' | attr:"placeholder:Student ID" }}</div> -->
+          {{ form.as_p }}
+          <div class="sub-btn">
+            <input type="submit" class="submit-btn btn" name="Submit"/>
+          </div>
+            <!-- <button type="submit" class="submit-btn btn">Submit</button> -->
+      </form>
+      
+  </div>
+{% endblock content %}
