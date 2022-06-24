@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 8 | The Correct Solution Process
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR Path 8 : The Correct Solution Process</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>
+                    We will now work through one way of understanding how to approach
+                    explaining what will happen to the power of the four elements as the
+                    value of R<sub>2</sub> decreases.
+                </p>
+                <p>
+                    Mentioning combining resistors as you did is a fine way to start. Let's begin there.
+                </p>
+                <figure>
+                    <figcaption><em>We are often able to simplify circuits by recognizing elements that are in series and elements that are in parallel. How do we know when elements are in series or in parallel and what electrical quantities do elements in each case share in common? Select all of the following that are true regarding series and parallel connections.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Elements in series share the same current.</li>
+                        <li>Elements in series share the same potential difference.</li>
+                        <li>Elements in parallel share the same current.</li>
+                        <li>Elements in parallel share the same potential difference.</li>
+                        <li>Any elements ties together at one node are in series.</li>
+                        <li>Any elements ties together at two nodes are in parallel.</li>
+                    </ol>
+                </figure>
+                <p>
+                    Properly recognizing series and parallel combinations is critically important in circuit analysis. Let's make sure we understand how to identify elements that are in series and elements that are in parallel.
+                </p>
+                <p>
+                    Elements in series share the same current. While it is often the case that elements in series are tied together at one node, this need not be the case and in fact does not guarantee that the elements are in series. The key is to determine whether the elements share the same current.
+                </p>
+                <p>
+                    Remember that the potential difference between two nodes does not depend on the path that one travels from a given node to another. Since any elements tied together at two nodes are in parallel, we therefore know that elements in parallel share the same potential difference.
+                </p>
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        <label for="Vs-summary">
+                            
+                        </label>
+                        {{ form.choice }}
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
