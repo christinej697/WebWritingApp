@@ -64,7 +64,8 @@ TEMPLATES = [
                  BASE_DIR / 'templates/dlr4',
                  BASE_DIR / 'templates/dlr5',
                  BASE_DIR / 'templates/dlr6',
-                 BASE_DIR / 'templates/dlr7'],
+                 BASE_DIR / 'templates/dlr7',
+                 BASE_DIR / 'templates/dlr8'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

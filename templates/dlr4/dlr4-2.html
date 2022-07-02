@@ -15,50 +15,49 @@ DLR Path 4 | Dispelling the Constant Voltage Drop Error
         <div class="prob-display">
 
             <div class="problem-statement">
-                <p>Let's start off with a question. Select all of the following that are true as the value of R2 decreases in the circuit below.</p>
-                <div class="right">
+                <p>Let's start off with a question. <em>Select all of the following that are true as the value of R2 decreases in the circuit below.</em></p>
+                <div class="right_fix">
                     <div class="circuit-image page2-img">
-                        <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                        <img src="{% static 'svg/Circuit_Original_w_Currents.svg' %}" width="350"/>
                     </div>
                 </div>
+                <hr class="divide">
                 <figure>
                     <figcaption><em>Select all of the following that are true about power in the above circuit.</em></figcaption>
                     <ol type="a" class="selection">
-                        <li>Power is energy per unit time.</li>
-                        <li>The voltage source supplies power in the above circuit.</li>
-                        <li>The resistors dissipate power in the above circuit.</li>
-                        <li>The total amount of power dissipated by the three resistors must precisely equal the amount of power provided by the source.</li>
+                        <li>Because the voltage drop across R<sub>2</sub> must stay the same, as the resistance of R<sub>2</sub> decreases, the current in resistor 2 must increase.</li>
+                        <li>Because the voltage drop across R<sub>3</sub> remains the same and its value of resistance remains constant, so does the current in R<sub>3</sub>.</li>
                     </ol>
                 </figure>
+                <hr class="divide">
             </div>
 
             <div class="problem-statement">
-                <hr>
                 <p>
-                    All three of the above statements are false, and notice, they all are based on the assumption that the voltage drop across
+                    Both of the above statements are false, and notice, they are based on the assumption that the voltage drop across
                     R<sub>2</sub> or R<sub>3</sub> remains constant as the value of R<sub>2</sub> decreases. The only element in the circuit that has a potential difference that
                     does not change as the value of R<sub>2</sub> changes is the ideal independent voltage source. Indeed, this is in essence the
                     definition of such a source -- it provides a constant potential difference across its terminals regardless of the circuit to
                     which it is connected. We cannot extend the idea of a constant potential difference to the remainder of the elements
-                    however as we will see through the following argument. Let's redraw the circuit, labeling potential differences.
+                    however, as we will see through the following argument. Let's redraw the circuit, labeling potential differences.
                 </p>
             </div>
 
             <div class="problem-statement">
-                <div class="right">
+                <div class="right_fix">
                     <div class="circuit-image page2-img">
-                        <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                        <img src="{% static 'svg/Circuit_Original_with_voltages.svg' %}" width="350"/>
                     </div>
                 </div>
                 <p><em>Point 1</em>: Let's start by assuming (incorrectly) that the voltage drop across resistor R<sub>3</sub> remains constant. If this is the case,
                     since the value of R<sub>3</sub> does not change in the stated problem, Ohm's law suggests that the current in resistor 3 is constant.
-                    That is, I<sub>3</sub> = V<sub>3</sub>/R<sub>3</sub> would be a constant.
+                    That is, I<sub>3</sub> = V<sub>3</sub>/R<sub>3</sub> would be a constant. Again, this is an incorrect statement for this circuit!
                 </p>
-                <p><em>Point 2</em>: Since R<sub>2</sub> and R<sub>3</sub> are tied together at both nodes, the are in parallel. Elements in parallel, share a common potential
+                <p><em>Point 2</em>: Since R<sub>2</sub> and R<sub>3</sub> are tied together at both nodes, they are in parallel. Elements in parallel, share a common potential
                     difference and so V<sub>2</sub> = V<sub>3</sub>. These two sentences are correct.
                 </p>
                 <p><em>Point 3</em>: Since we argued in Point 1 that the potential across resistor 3 remains constant, and as Point 2 indicates,
-                    resistor 2 and resistor 3 have the same potential difference, V<sub>2</sub> = V<sub>3</sub> = a constant. This would suggests that as the value
+                    resistor 2 and resistor 3 have the same potential difference, V<sub>2</sub> = V<sub>3</sub> = a constant. This would suggest that as the value
                     of R<sub>2</sub> decreases, Ohm's law reveals that the current in R<sub>2</sub> increases as I<sub>2</sub> = V<sub>2</sub>/R<sub>2</sub>.
                 </p>
                 <p><em>Point 4</em>: 
@@ -73,14 +72,14 @@ DLR Path 4 | Dispelling the Constant Voltage Drop Error
                     of R<sub>2</sub> decreases. Let's apply the fundamental circuit law that relates potential differences around a loop, KVL.
                     Summing voltage drops going clockwise around the inner loop and setting the sum to zero, we find: -V<sub>s</sub> + V<sub>1</sub> + V<sub>2</sub> = 0
                 </p>
-                <hr>
-                <p>Select the correct statement in considering our arguments when applying KVL.</p>
+                <hr class="divide">
             </div>
 
             <form method="post">{% csrf_token %}
 
                 <div class="drop-downs">
                     <div class="drop-down">
+                        <label for="Vs-summary"><em>Select the correct statement in considering our arguments when applying KVL.</em></label>
                         {{ form.choice }}
                     </div>
                 </div>

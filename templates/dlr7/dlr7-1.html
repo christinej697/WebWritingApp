@@ -24,7 +24,7 @@ DLR Path 7 | Dispelling Energy Conservation Misconceptions
 
             <div class="right">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Circuit_Original.svg' %}" width="350"/>
                 </div>
 
             </div>
@@ -34,9 +34,9 @@ DLR Path 7 | Dispelling Energy Conservation Misconceptions
                     Applied to an electric circuit, the principle of conservation of energy states that energy is neither created nor
                     destroyed in an electric circuit and is only transformed. For example, in our circuit the voltage source provides energy
                     to the circuit and the resistors dissipate the energy thus heating up in the process. Perhaps the voltage source models
-                    a battery with stored chemical energy that is transformed to electrical energy. In analyzing electric circuits, we are
+                    a battery with stored chemical energy that is transformed to electrical energy. In <u>analyzing</u> electric circuits, we are
                     typically not concerned with details such as chemical-to-electrical energy conversion and rather only seek to verify
-                    that the sum of energy (i.e. power) dissipated or stored is precisely balanced by the amount of energy provided.
+                    that the sum of energy (i.e. power) dissipated and/or stored is precisely balanced by the amount of energy provided.
                 </p>
             </div>
 
@@ -44,7 +44,7 @@ DLR Path 7 | Dispelling Energy Conservation Misconceptions
 
                 <div class="drop-downs">
                     <div class="drop-down">
-                        <label for="Vs-summary">Select all the following that are true in considering our circuit.</label>
+                        <label for="Vs-summary"><em>Select all the following that are true in considering our circuit.</em></label>
                         {{ form.choice }}
                     </div>
                 </div>

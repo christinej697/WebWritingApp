@@ -19,14 +19,14 @@ DLR Path 5 | Dispelling Resistor Combination Errors
                     Combining resistors that are in series or parallel is a strategy that is often helpful in analyzing circuits with a single
                     source and multiple resistors. To do so successfully requires that one properly identifies when resistors are in series or
                     in parallel. Let's start with a series connection. While it is sometimes the case that resistors that are in series are tied
-                    together at one node, this is neither a necessary nor sufficient condition. Consider the following two circuit in which we
+                    together at one node, this is neither a necessary nor sufficient condition. Consider the following two circuits in which we
                     will try to identify resistors that are in series.
                 </p>
             </div>
 
-            <div class="right">
+            <div class="right_fix">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Series_Circuits.svg' %}" width="675"/>
                 </div>
 
             </div>
@@ -36,9 +36,9 @@ DLR Path 5 | Dispelling Resistor Combination Errors
                     In the circuit on the left, there is only one current. This current is the same in the voltage source and the three
                     resistors; no matter where the current is measured, one would get the same value. For elements to be in series, they
                     must share the same current. This is the necessary and sufficient condition. Therefore, all four elements in the circuit
-                    on the left are in series. When simplifying circuits using series combinations, we deal with resistors. Therefore we
+                    on the left are in series. When simplifying circuits using series combinations, we deal with resistors. Therefore, we
                     focus on the fact that resistors A, B, and C are in series. Notice that while resistors A and B are tied together at one
-                    node resistors A and C are not even though resistors A and C are in series. Again, we are looking for resistors that
+                    node, resistors A and C are not, even though resistors A and C are in series. Again, we are looking for resistors that
                     share the same current. Let's keep this in mind when considering the circuit on the right.
                 </p>
             </div>
@@ -47,7 +47,7 @@ DLR Path 5 | Dispelling Resistor Combination Errors
 
                 <div class="drop-downs">
                     <div class="drop-down">
-                        <label for="Vs-summary">Select all of the following that are true with regard to the resistors in the circuit to the right.</label>
+                        <label for="Vs-summary"><em></wm>Select all of the following that are true with regard to the resistors in the circuit to the right.</em></label>
                         {{ form.choice }}
                     </div>
                 </div>

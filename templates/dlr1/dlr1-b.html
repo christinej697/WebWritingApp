@@ -16,55 +16,56 @@ DLR Path 1 | Dispelling the Localized Misconception
 
             <div class="problem-statement">
                 <p>When beginning to study circuit analysis, it is not uncommon to have a very “localized” conception on how an electric
-                circuit works. In such outlook, one is inclined to think that if a change is made somewhere in the circuit, only the
+                circuit works. In such an outlook, one is inclined to think that if a change is made somewhere in the circuit, only the
                 element that is changed is impacted. Let's spend a couple of minutes making certain we look at a circuit as a system
                 and not simply a connection of independent elements. Here is the circuit again in which we are to address what
-                happens to the power in all four elements when the resistance of R2 decreases.</p>
+                happens to the power in all four elements when the resistance of <em>R<sub>2</sub></em> decreases.</p>
             </div>
 
             <div class="right">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Circuit_Original_w_Currents_resize_number_2.svg' %}" width="350"/>
                 </div>
-
             </div>
             
             <div class="problem-statement">
-                <p> Someone displaying localized reasoning in analyzing the above circuit might say that “as the value of R<sub>2</sub> decreases
-                    only the power of R<sub>2</sub> will be affected.” We can quickly argue against such reasoning by considering what is meant by
-                    power conservation in an electric circuit.</p>
-                    <hr>
-                    <figure>
-                        <figcaption><em>Select all of the following that are true about power in the above circuit.</em></figcaption>
-                        <ol type="a" class="selection">
-                            <li>Power is energy per unit time.</li>
-                            <li>The voltage source supplies power in the above circuit.</li>
-                            <li>The resistors dissipate power in the above circuit.</li>
-                            <li>The total amount of power dissipated by the three resistors must precisely equal the amount of power provided by the source.</li>
-                        </ol>
-                    </figure>
-                    <hr>
-                    <h3>Your result:</h3>
-                    <p>
-                        <em>Incorrect</em>, all four statements regarding power in the circuit in question are true.
-                    </p>
-                    <p>
-                        Power, which is energy per unit time, is conserved in an electric circuit. This means that there is a precise balance
-                        between the power that is provided and that which is dissipated (and/or stored).
-                    </p>
-                    <p>
-                        If for example, the power associated with R<sub>2</sub> decreased as the value of R<sub>2</sub> decreased while the power associated with
-                        the other elements remained constant, the voltage source would be providing more energy per unit time to the circuit
-                        than what is being dissipated -- suggesting that there is not a precise balance in power. If on the other hand, the
-                        power associated with R<sub>2</sub> increased as the value of R<sub>2</sub> decreased while the power associated with the other elements
-                        remained constant, there would be more energy per unit time dissipated in the circuit than what is provided! Both of
-                        these scenarios are incorrect. Therefore, if one argues that as the resistance of R<sub>2</sub> decreases only the power of resistor
-                        R<sub>2</sub> is affected, that person is suggesting that power is not conserved.
-                    </p>
-                    <p>
-                        It is important that we come to appreciate that an electric circuit should be considered a system, while a change may
-                        be made to one very specific part of an electric, the effects of this change may be felt throughout the circuit!
-                    </p>
+                <p>
+                    Someone displaying localized reasoning in analyzing the above circuit might say that <q>as the value of <em>R<sub>2</sub></em> decreases
+                    only the power of <em>R<sub>2</sub></em> will be affected.</q> We can argue against such reasoning by considering what is meant by
+                    power conservation in an electric circuit.
+                </p>
+                <hr class="divide">
+                <figure>
+                    <figcaption><em>Select all of the following that are true about power in the above circuit.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Power is energy per unit time.</li>
+                        <li>The voltage source supplies power in the above circuit.</li>
+                        <li>The resistors dissipate power in the above circuit.</li>
+                        <li>The total amount of power dissipated by the three resistors must precisely equal the amount of power provided by the source.</li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <h3>Your result:</h3>
+                <p>
+                    <em>Incorrect</em>, all four statements regarding power in the circuit in question are true.
+                </p>
+                <p>
+                    Power, which is energy per unit time, is conserved in an electric circuit. This means that there is a precise balance
+                    between the power that is provided and that which is dissipated (and/or stored).
+                </p>
+                <p>
+                    If, for example, the power associated with <em>R<sub>2</sub></em> decreased as the value of <em>R<sub>2</sub></em> decreased while the power associated with
+                    the other elements remained constant, the voltage source would be providing more energy per unit time to the circuit
+                    than what is being dissipated &mdash; suggesting that there is not a precise balance in power. If, on the other hand, the
+                    power associated with <em>R<sub>2</sub></em> increased as the value of <em>R<sub>2</sub></em> decreased while the power associated with the other elements
+                    remained constant, there would be more energy per unit time dissipated in the circuit than what is provided! Both of
+                    these scenarios are incorrect. Therefore, if one argues that as the resistance of <em>R<sub>2</sub></em> decreases only the power of resistor
+                    <em>R<sub>2</sub></em> is affected, that person is suggesting that power is not conserved.
+                </p>
+                <p>
+                    It is important that we come to appreciate that an electric circuit should be considered a system &mdash; while a change may
+                    be made to one very specific part of a circuit, the effects of this change may be felt throughout the circuit!
+                </p>
             </div>
 
             <form method="post">{% csrf_token %}

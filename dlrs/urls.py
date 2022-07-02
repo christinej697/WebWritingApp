@@ -4,7 +4,9 @@ from .views import (DLR1_1TemplateView, DLR1_1FormView, DLR1_ATemplateView, DLR1
                     DLR3_2bFormView, DLR3_2cFormView, DLR3_3aTemplateView, DLR3_3bTemplateView,
                     DLR3_3cTemplateView, DLR4_1FormView, DLR4_2FormView, DLR4_3TemplateView,
                     DLR5_1FormView, DLR5_2TemplateView, DLR6_1TemplateView, DLR7_1FormView,
-                    DLR7_2TemplateView, DLR8_1aFormView, DLR8_1bFormView)
+                    DLR7_2TemplateView, DLR8_1aFormView, DLR8_1bFormView, DLR8_2FormView,
+                    DLR8_3aFormView, DLR8_3bFormView, DLR8_4FormView, DLR8_5FormView,
+                    DLR8_6FormView, DLR8_7FormView)
 
 urlpatterns = [
     path('dlr1-1', DLR1_1FormView.as_view(), name="dlr1-1"),
@@ -29,4 +31,11 @@ urlpatterns = [
     path('dlr7-2', DLR7_2TemplateView.as_view(), name='dlr7-2'),
     path('dlr8-1a', DLR8_1aFormView.as_view(), name="dlr8-1a"),
     path('dlr8-1b', DLR8_1bFormView.as_view(), name='dlr8-1b'),
+    path('dlr8-2', DLR8_2FormView.as_view(), name='dlr8-2'),
+    path('dlr8-3a', DLR8_3aFormView.as_view(), name="dlr8-3a"),
+    path('dlr8-3b', DLR8_3bFormView.as_view(), name='dlr8-3b'),
+    path('dlr8-4', DLR8_4FormView.as_view(), name="dlr8-4"),
+    path('dlr8-5', DLR8_5FormView.as_view(), name="dlr8-5"),
+    path("dlr8-6", DLR8_6FormView.as_view(), name="dlr8-6"),
+    path('dlr8-7', DLR8_7FormView.as_view(), name="dlr8-7"),
 ]

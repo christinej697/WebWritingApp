@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DLR Path 8 | The Correct Solution Process
+{% endblock title %}
+
+{% block content %}
+<div class="problem-page2">
+    <div class="prob-container">
+        <div class="prob-title">
+            <h3>DLR Path 8 : The Correct Solution Process</h3>
+        </div>
+
+        <div class="prob-display">
+
+            <div class="problem-statement">
+                <p>
+                    We will now work through one way of understanding how to approach
+                    explaining what will happen to the power of the four elements as the
+                    value of R<sub>2</sub> decreases.
+                </p>
+                <p>
+                    Mentioning combining resistors as you did is a fine way to start. Let's begin there.
+                </p>
+                <hr class="divide">
+                <figure>
+                    <figcaption><em>We are often able to simplify circuits by recognizing elements that are in series and elements that are in parallel. How do we know when elements are in series or in parallel and what electrical quantities do elements in each case share in common? Select all of the following that are true regarding series and parallel connections.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>Elements in series share the same current.</li>
+                        <li>Elements in series share the same potential difference.</li>
+                        <li>Elements in parallel share the same current.</li>
+                        <li>Elements in parallel share the same potential difference.</li>
+                        <li>Any elements ties together at one node are in series.</li>
+                        <li>Any elements ties together at two nodes are in parallel.</li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <p>
+                    Properly recognizing series and parallel combinations is critically important in circuit analysis. Let's make sure we understand how to identify elements that are in series and elements that are in parallel.
+                </p>
+                <p>
+                    <strong>Elements in series share the same current.</strong> While it is often the case that elements in series are tied together at one node, this need not be the case and in fact does not guarantee that the elements are in series. The key is to determine whether the elements share the same current.
+                </p>
+                <p>
+                    Remember that the potential difference between two nodes does not depend on the path that one travels from a given node to another. Since <strong>any elements tied together at two nodes are in parallel,</strong> we therefore know that <strong>elements in parallel share the same potential difference.</strong>
+                </p>
+                <p>
+                    To summarize the correct answers: elements in series share the same current, elements in parallel share the same potential difference, and elements in parallel are tied together at two nodes.
+                </p>
+                <p>
+                    Here again is the circuit we are considering. Notice that while resistors R<sub>1</sub> and R<sub>2</sub> share one node, they are NOT in series as the current in the two resistors will be different. In fact we know by applying KCL at the node connecting the three resistors that the current in R<sub>1</sub> is the sum of the currents in resistors R<sub>2</sub> and R<sub>3</sub>.
+                </p>
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/Circuit_Original_w_Currents.svg' %}" width="350"/>
+                    </div>
+                </div>
+                <hr class="divide">
+                <figure>
+                    <figcaption><em>Notice that R<sub>2</sub> and R<sub>3</sub> are tied together at both ends -- they share two nodes and therefore are in parallel. Since the problem has us imagine what happens when the resistance of R<sub>2</sub> decreases, let's think about whether the effective resistance of the parallel combination of R<sub>2</sub> and R<sub>3</sub> increases or decreases as the resistance of R<sub>2</sub> decreases.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>The effective resistance of the parallel combination increases as R<sub>2</sub> decreases.</li>
+                        <li>The effective resistance of the parallel combination decreases as R<sub>2</sub> decreases.</li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <p>
+                    As the resistance of R<sub>2</sub> decreases, the resistance of the parallel combination of R<sub>2</sub> and R<sub>3</sub> decreases.
+                </p>
+                <p>
+                    The parallel combination of R<sub>2</sub> and R<sub>3</sub>, call it resistor R<sub>23</sub>, is in series with R<sub>23</sub>. This means that the effective resistance “seen” by the voltage source is R<sub>1</sub>+R<sub>23</sub>. Since the resistance of R<sub>23</sub> decreases as the value of R<sub>2</sub> decreases, the effective resistance in the circuit decreases.
+                </p>
+                <hr class="divide">
+                <figure>
+                    <figcaption>
+                        <em>The voltage source is an ideal independent voltage source. Select all of the following that are true with regard to the ideal independent voltage source in the circuit.</em>
+                    </figcaption>
+                    <ol type="a" class="selection">
+                        <li>Since the voltage source is ideal, the current associated with the voltage source will not change as the value of R<sub>2</sub> changes.</li>
+                        <li>Since the voltage source is ideal, the power associated with the voltage source will not change as the value of R<sub>2</sub> changes.</li>
+                        <li>Since the voltage source is ideal, the potential difference across the voltage source will not change as the value of R<sub>2</sub> changes.</li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <p>
+                    Since the voltage source is ideal, the potential difference across the voltage source will not change as the value of R2 changes; the current and the power associated with the voltage source will change however. Consider the original circuit and its equivalent circuit shown below.
+                </p>
+                <div class="right_fix">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/Circuit_Original_and_Req_Circuit.svg' %}" width="600"/>
+                    </div>
+                </div>
+                <p>
+                    Since the equivalent resistance (R<sub>EQ</sub>) seen by the source decreases, and the potential difference across the voltage source remains constant, Ohm's Law reveals that the current associated with the voltage source, let's call it I<sub>S</sub>, increases. That is, since I<sub>S</sub> = V<sub>S</sub>/R<sub>EQ</sub> and V<sub>S</sub> remains constant while R<sub>EQ</sub> decreases due to a decrease in R<sub>2</sub>, the current associated with the voltage source must increase. Looking again at the original circuit, we see that V<sub>S</sub> and R<sub>1</sub> share the same current. This means that the current in resistor R<sub>1</sub> increases as the value of R<sub>2</sub> decreases. We are now ready to determine what happens to the power associated with V<sub>S</sub> and R<sub>1</sub> as the value of R<sub>2</sub> decreases.
+                </p>
+                <p>
+                    Recall that the power associated with any circuit element is the product of the voltage across the element and the current in the element. Since the potential difference across the voltage source remains constant while its current increases, the <strong> voltage source must deliver more power</strong> as the resistance of R<sub>2</sub> decreases.
+                </p>
+                <p>
+                    While the equation <em>P=VI</em> applies to any element, when dealing with a resistor we may use Ohm's Law to express the power in two additional ways, one in terms of current and resistance and the other in terms of potential difference and resistance. For a resistor:
+                </p>
+                <p>
+                    <em>Power = Potential difference times current = VI</em>
+                </p>
+                <p>
+                    <em>Power = Current squared times resistance = I<sup>2</sup>R</em>
+                </p>
+                <p>
+                    <em>Power = Potential difference squared divided by resistance = V<sup>2</sup>/R</em>
+                </p>
+                <hr class="divide">
+                <figure>
+                    <figcaption>
+                        <em>Since we have established that the current in resistor R<sub>1</sub> increases as the resistance of R<sub>2</sub> decreases, which of the following is/are true?</em>
+                    </figcaption>
+                    <ol type="a" class="selection">
+                        <li>Since the value of R<sub>1</sub>'s resistance is constant while its current increases, resistor R<sub>1</sub> must dissipate MORE power as the resistance of R<sub>2</sub> decreases.</li>
+                        <li>Since the value of R<sub>1</sub>'s resistance is constant while its current increases, resistor R<sub>1</sub> must dissipate LESS power as the resistance of R<sub>2</sub> decreases.</li>
+                        <li>The increase in current in resistor R<sub>1</sub> causes more potential difference across R<sub>1</sub>.</li>
+                        <li>The increase in current in resistor R<sub>1</sub> is caused by an increase in potential difference across R<sub>1</sub>.</li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <p>
+                    Since the drop in the value of resistance of R<sub>2</sub> causes an increase in the current in resistor R<sub>1</sub> while R<sub>1</sub>'s resistance remains constant, clearly the formula P=I<sup>2</sup>R reveals that the power dissipated by resistor R<sub>1</sub> increases. But does the increase in current result in an increase in potential difference across R<sub>1</sub> or vice versa?
+                </p>
+                <p>
+                    It is a potential difference that drives charge flow, creating a current. In the circuit in question, let's remember that the potential difference across the source is fixed. Part of the potential difference of the source drops across R<sub>1</sub> and the remainder drops across the parallel combination of R<sub>2</sub> and R<sub>3</sub>. As R<sub>2</sub> decreases, surface charge subtlety but rapidly rearranges such that a larger portion of the source voltage drops across R<sub>1</sub>, this increases the current in R<sub>1</sub>. Again, it is the potential difference that drives current, not the other way around. Let's redraw the circuit with just two resistors, R<sub>1</sub> and the parallel combination of R<sub>2</sub> and R<sub>3</sub> which we are calling R<sub>23</sub>.
+                </p>
+                <div class="right_fix">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/Circuit_R2_R3_parallel.svg' %}" width="300"/>
+                    </div>
+                </div>
+                <hr class="divide">
+                <figure>
+                    <figcaption>
+                        <em>Which of the following is/are true?</em>
+                    </figcaption>
+                    <ol type="a" class="selection">
+                        <li>The current in the equivalent resistance R<sub>23</sub> is the same as that through R<sub>1</sub>.</li>
+                        <li>The current in the equivalent resistance R<sub>23</sub> is less than the current in R<sub>1</sub>.</li>
+                        <li>The potential difference across the parallel resistance R<sub>23</sub>, V<sub>R23</sub>, decreases as R<sub>2</sub> decreases.</li>
+                        <li>The potential difference across the parallel resistance R<sub>23</sub>, V<sub>R23</sub>, increases as R<sub>2</sub> decreases.</li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <p>
+                    Since resistor R<sub>1</sub> is in series with the combined resistance of R<sub>2</sub> and R<sub>3</sub>, the current in R<sub>1</sub> is the same as that through the combination of R<sub>2</sub> and R<sub>3</sub>. As we have established that the potential difference across V<sub>S</sub> does not change and the potential difference across R<sub>1</sub> increases, KVL reveals that the voltage drop across the parallel combination of R<sub>2</sub> and R<sub>3</sub> decreases. How can the voltage drop across R<sub>23</sub> decrease and yet the current in R<sub>23</sub> increase? This is because the resistance of R<sub>23</sub> decreases as R<sub>2</sub> decreases. It takes less “push” to move charge through the parallel combination. But is there more current through R<sub>2</sub>? Through R<sub>3</sub>? Through both R<sub>2</sub> and R<sub>3</sub>? Let's see.
+                </p>
+                <div class="right_fix">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/Circuit_Original_with_voltages.svg' %}" width="350"/>
+                    </div>
+                </div>
+                <p>
+                    It is more straightforward to discuss what happens to the current in R<sub>3</sub>, I<sub>3</sub>, and so let's start there. Of the three resistors in our problem, only the value of R<sub>2</sub> changes. Since the voltage drop across R<sub>3</sub> is decreasing as the value of R<sub>2</sub> decreases and yet the resistance R<sub>3</sub> remains constant, Ohm's Law reveals that the current in R<sub>3</sub> must decrease. Since the current in R<sub>1</sub> is increasing and the current in R<sub>3</sub> is decreasing, by KCL the current in R2 must be increasing. But what does a decreasing I<sub>3</sub> and an increasing I<sub>2</sub> result in terms of the power associated with R<sub>3</sub> and the power associated with R<sub>2</sub>?
+                </p>
+                <p>
+                    To consider what happens to the power associated with R<sub>3</sub>, we turn to the following equation: P<sub>R3</sub>=I<sub>3</sub><sup>2</sup>R<sub>3</sub>. Since R<sub>3</sub> remains constant while I<sub>3</sub> decreases due to the decrease in the potential difference across R<sub>3</sub> as the value of R<sub>2</sub> decreases, the power associated with R<sub>3</sub> decreases. We now only need to consider the power associated with R<sub>2</sub>.
+                </p>
+                <p>
+                    In the scenario with which we have been presented we have established that the current in resistor R<sub>2</sub> increases. It is tempting when recalling the equation P<sub>R2</sub>=I<sub>2</sub><sup>2</sup>R<sub>2</sub> to conclude the power in R<sub>2</sub> must increase as I<sub>2</sub> increases. We must remember however that in the circuit in question, it is a decrease R<sub>2</sub> that results in an increase I<sub>2</sub>. We therefore have competing factors in the power equation. We could also look to the other forms of the power equation for a resistor, namely, P<sub>R2</sub>=V<sub>2</sub><sup>2</sup>/R<sub>2</sub> and P<sub>R2</sub>=V<sub>R2</sub>I<sub>2</sub>. Again, competing factors. Whether the power associated with R<sub>2</sub> increases or decreases as the value of R<sub>2</sub> BEGINS to decrease depends on the starting values of the three resistors. We can conclude however that in the scenario presented, the power associated with both R<sub>2</sub> and R<sub>3</sub> will tend to zero as the value of R<sub>2</sub> approaches zero. In fact, when R<sub>2</sub> reaches zero, resistor R<sub>3</sub> will be shorted and the power associated with the source will be at its maximum and will be balanced by the power in R<sub>1</sub>.
+                </p>
+                <hr class="divide">
+                <figure>
+                    <figcaption>
+                        <em>Which of the following is/are true?</em>
+                    </figcaption>
+                    <ol type="a" class="selection">
+                        <li>P<sub>VS</sub>=V<sub>S</sub><sup>2</sup>/R<sub>1</sub></li>
+                        <li>P<sub>VS</sub>=V<sub>s</sub><sup>2</sup>/(R<sub>1</sub>+R<sub>3</sub>)</li>
+                        <li>I<sub>S</sub>=V<sub>S</sub>/(R<sub>1</sub>+R<sub>3</sub>)</li>
+                        <li>P<sub>23</sub>=0</li>
+                        <li>P<sub>R2</sub>=0</li>
+                        <li>I<sub>R1</sub>=I<sub>R2</sub></li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <p>
+                    As depicted in the sketch below, when R<sub>2</sub> = 0 Ohms, R<sub>2</sub> acts like a simple wire, shorting R<sub>3</sub>. There will be no potential difference across R<sub>3</sub> and therefore no current in R<sub>3</sub>. A single effective loop exists in the circuit with the current in the voltage source, R<sub>1</sub> and the wire that models a zero-valued R<sub>2</sub> having the same current. The final current is therefore, I<sub>S</sub> = I<sub>1</sub> = I<sub>2</sub> = V<sub>S</sub>/R<sub>1</sub>. Therefore ultimately P<sub>VS</sub>=P<sub>R1</sub>=V<sub>S</sub><sup>2</sup>/R<sub>1</sub> and P<sub>R2</sub>=P<sub>R3</sub>=0.
+                </p>
+                <div class="right">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/Circuit_R2_shorted.svg' %}" width="350"/>
+                    </div>
+                </div>
+            </div>
+
+            <form method="post">{% csrf_token %}
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        <label for="Vs-summary">
+                            <em>Now that you have gone through the solution process, rate the confidence you have in your understanding of the correct answer to the problem.</em>
+                        </label>
+                        <br/>
+                        {{ form.correctPath_confidence }}
+                    </div>
+                </div>
+
+                <div class="drop-downs">
+                    <div class="drop-down">
+                        <label for="Vs-summary">
+                            <em>Was the feedback that you received helpful to you? If not, please make a suggestion on how it could be improved.</em>
+                        </label>
+                        <br/>
+                        {{ form.correctPath_feedback_on_feedback }}
+                    </div>
+                </div>
+                
+                <div class="sub-btn">
+                    <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

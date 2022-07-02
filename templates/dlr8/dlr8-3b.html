@@ -56,6 +56,21 @@ DLR Path 8 | The Correct Solution Process
                         <img src="{% static 'svg/Circuit_Original_w_Currents.svg' %}" width="350"/>
                     </div>
                 </div>
+                <hr class="divide">
+                <figure>
+                    <figcaption><em>Notice that R<sub>2</sub> and R<sub>3</sub> are tied together at both ends -- they share two nodes and therefore are in parallel. Since the problem has us imagine what happens when the resistance of R<sub>2</sub> decreases, let's think about whether the effective resistance of the parallel combination of R<sub>2</sub> and R<sub>3</sub> increases or decreases as the resistance of R<sub>2</sub> decreases.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>The effective resistance of the parallel combination increases as R<sub>2</sub> decreases.</li>
+                        <li>The effective resistance of the parallel combination decreases as R<sub>2</sub> decreases.</li>
+                    </ol>
+                </figure>
+                <hr class="divide">
+                <p>
+                    It is not uncommon for a student looking at the formula for combining resistors in parallel to become confused with the inverses present in the standard formula. It should be remembered that the effective resistance of resistors in parallel is always less than the smallest resistance of the resistors making up the parallel combination. This makes sense as adding a parallel branch gives another path for charge to flow, making it easier for charge to flow overall. Thus, as the resistance of R<sub>2</sub> decreases, so does the effective resistance of the parallel combination of R<sub>2</sub> and R<sub>3</sub>.
+                </p>
+                <p>
+                    The parallel combination of R<sub>2</sub> and R<sub>3</sub>, call it resistor R<sub>23</sub>, is in series with R<sub>23</sub>. This means that the effective resistance “seen” by the voltage source is R<sub>1</sub>+R<sub>23</sub>. Since the resistance of R<sub>23</sub> decreases as the value of R<sub>2</sub> decreases, the effective resistance in the circuit decreases.
+                </p>
             </div>
 
             <form method="post">{% csrf_token %}
@@ -63,7 +78,7 @@ DLR Path 8 | The Correct Solution Process
                 <div class="drop-downs">
                     <div class="drop-down">
                         <label for="Vs-summary">
-                            <em>Notice that R<sub>2</sub> and R<sub>3</sub> are tied together at both ends -- they share two nodes and therefore are in parallel. Since the problem has us imagine what happens when the resistance of R<sub>2</sub> decreases, let's think about whether the effective resistance of the parallel combination of R<sub>2</sub> and R<sub>3</sub> increases or decreases as the resistance of R<sub>2</sub> decreases.</em>
+                            The voltage source is an ideal independent voltage source. <em>Select all of the following that are true with regard to the ideal independent voltage source in the circuit.</em>
                         </label>
                         {{ form.choice }}
                     </div>

@@ -15,31 +15,32 @@ DLR Path 1 | Dispelling the Localized Misconception
         <div class="prob-display">
 
             <div class="problem-statement">
-                <p>When beginning to study circuit analysis, it is not uncommon to have a very “localized” conception on how an electric
-                circuit works. In such outlook, one is inclined to think that if a change is made somewhere in the circuit, only the
-                element that is changed is impacted. Let's spend a couple of minutes making certain we look at a circuit as a system
-                and not simply a connection of independent elements. Here is the circuit again in which we are to address what
-                happens to the power in all four elements when the resistance of R2 decreases.</p>
+                <p>
+                    When beginning to study circuit analysis, it is not uncommon to have a very “localized” conception on how an electric circuit works. In such an outlook, one is inclined to think that if a change is made somewhere in the circuit, only the element that is changed is impacted. Let's spend a couple of minutes making certain we look at a circuit as a system and not simply a connection of independent elements. Here is the circuit again in which we are to address what happens to the power in all four elements when the resistance of <em>R<sub>2</sub></em> decreases.
+                </p>
             </div>
 
             <div class="right">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Circuit_Original_w_Currents_resize_number_2.svg' %}" width="350"/>
                 </div>
-
             </div>
             
             <div class="problem-statement">
-                <p> Someone displaying localized reasoning in analyzing the above circuit might say that “as the value of R<sub>2</sub> decreases
-                    only the power of R<sub>2</sub> will be affected.” We can quickly argue against such reasoning by considering what is meant by
-                    power conservation in an electric circuit.</p>
+                <p>
+                    Someone displaying localized reasoning in analyzing the above circuit might say that <q>as the value of <em>R<sub>2</sub></em> decreases
+                    only the power of <em>R<sub>2</sub></em> will be affected.</q> We can argue against such reasoning by considering what is meant by
+                    power conservation in an electric circuit.
+                </p>
             </div>
+
+            <hr class="divide">
 
             <form method="post">{% csrf_token %}
 
                 <div class="drop-downs">
                     <div class="drop-down">
-                        <label for="Vs-summary">Select all of the following that are true about power in the above circuit.</label>
+                        <label for="Vs-summary"><em>Select all of the following that are true about power in the above circuit.</em></label>
                         {{ form.choice }}
                     </div>
                 </div>

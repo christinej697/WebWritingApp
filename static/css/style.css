@@ -1,6 +1,6 @@
 /* GENERAL *******************************/
 
-* {
+*:not(figure) {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -311,6 +311,12 @@ mark.sentences:hover {
     position: relative;
 }
 
+.right_fix {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
 .drop-down {
     display: block;
     margin-top: 15px;
@@ -330,6 +336,10 @@ hr {
     margin: 10px 0 10px 0; 
 }
 
+hr.divide {
+    margin: 45px;
+}
+
 ol.selection {
     text-align: left;
 }
@@ -340,4 +350,8 @@ ol.selection > li {
 
 .prob-title > h3 {
     text-align: left
+}
+
+p.equation {
+    padding: 20px 0 20px 0;
 }

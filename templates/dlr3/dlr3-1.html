@@ -15,30 +15,32 @@ DLR Path 3 | Dispelling the Sequential Misconception
         <div class="prob-display">
 
             <div class="problem-statement">
-                <p>It is not uncommon for the student to exhibit a so-called “sequential “
+                <p>
+                    It is not uncommon for the student to exhibit a so-called “sequential“
                     misconception in explaining the behavior of a circuit such as we are
                     considering. Based on your response, we want to make sure you think of
-                    a circuit more of a system than as a simple connection of independent
+                    a circuit as more of a system than as a simple connection of independent
                     elements. Here is the circuit again in which we are to address what
                     happens to the power in all four elements when the resistance of <em>R<sub>2</sub></em>
-                    decreases.</p>
+                    decreases.
+                </p>
             </div>
 
-            <div class="right">
+            <div class="right_fix">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Circuit_Original_w_Currents.svg' %}" width="350"/>
                 </div>
             </div>
 
             <div class="problem-statement">
                 <p>
-                    Someone displaying sequential reasoning might say that “since resistor
-                    <em>R<sub>2</sub></em> comes after <em>R<sub>1</sub></em> in the circuit”, or since “<em>R<sub>2</sub></em> is further downstream than
-                    <em>R<sub>1</sub></em>” the voltage and current associated with <em>R<sub>1</sub></em> are not affected by
+                    Someone displaying sequential reasoning might say that <q>since resistor
+                    <em>R<sub>2</sub></em> comes after <em>R<sub>1</sub></em> in the circuit</q>, or since <q><em>R<sub>2</sub></em> is further downstream than
+                    <em>R<sub>1</sub></em></q> the voltage and current associated with <em>R<sub>1</sub></em> are not affected by
                     changes in <em>R<sub>2</sub></em>. Such an explanation is contrary to what actually occurs in
                     the circuit with changes in the value of <em>R<sub>2</sub></em>. Let's try to understand the
                     situation more correctly by beginning with an exploration of what the
-                    ideal independent voltage source does in the circuit as misconceptions in
+                    ideal independent voltage source does in the circuit, as misconceptions in
                     how to model the voltage source may also come into play with the
                     sequential misconception.
                 </p>
@@ -62,9 +64,9 @@ DLR Path 3 | Dispelling the Sequential Misconception
                 </p>
             </div>
 
-            <div class="right">
+            <div class="right_fix">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Circuit_with_only_Rx_and_Ry.svg' %}" width="290"/>
                 </div>
             </div>
 
@@ -72,15 +74,13 @@ DLR Path 3 | Dispelling the Sequential Misconception
 
                 <div class="drop-downs">
                     <div class="drop-down">
-                        <label for="Vs-summary">Since there is a complete loop, charge will flow and since there is but one voltage source, conventional current will be
-                            clockwise. What is the relationship between currents <em>I<sub>s</sub></em>, <em>I<sub>x</sub></em> and <em>I<sub>y</sub></em>?</label>
+                        <label for="Vs-summary">Since there is a complete loop, charge will flow and since there is but one voltage source with its positive terminal at the top, conventional current will be clockwise. <em>What is the relationship between currents <em>I<sub>s</sub></em>, <em>I<sub>x</sub></em> and <em>I<sub>y</sub></em>?</em></label>
                         {{ form.choice }}
                     </div>
                 </div>
                 
                 <div class="sub-btn">
                     <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Click to submit choices"/>
-                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
                 </div>
             </form>
 

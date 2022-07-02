@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MaxValueValidator
+from django.contrib.postgres.fields import ArrayField
 
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
@@ -36,6 +37,24 @@ class StudentsDb(models.Model):
     most_confident = models.TextField(blank=True, null=True)
     time_started = models.DateTimeField(auto_now_add=True)
     time_finished = models.DateTimeField(auto_now_add=True)
+    localized_power = ArrayField(models.CharField(max_length=1))
+    ideal_vs_properties = ArrayField(models.CharField(max_length=1))
+    seq_current_direction = models.CharField(max_length=10, blank=True, null=True)
+    seq_current_relationship = models.TextField(blank=True, null=True)
+    seq_resistor_vdrop = ArrayField(models.CharField(max_length=1))
+    constantVdrop_vdrop = ArrayField(models.CharField(max_length=1))
+    constantVdrop_kvl = models.CharField(max_length=10, blank=True, null=True)
+    resistorCombo_series = ArrayField(models.CharField(max_length=1))
+    energyCons_energy = ArrayField(models.CharField(max_length=1))
+    correctPath_ser_par = ArrayField(models.CharField(max_length=1))
+    correctPath_eff_resistance = models.CharField(max_length=10, blank=True, null=True)
+    correctPath_idealVs = ArrayField(models.CharField(max_length=1))
+    correctPath_R1 = ArrayField(models.CharField(max_length=1))
+    correctPath_R23 = ArrayField(models.CharField(max_length=1))
+    correctPath_R2_short = ArrayField(models.CharField(max_length=1))
+    correctPath_confidence = models.PositiveIntegerField(blank=True, null=True, validators=[MaxValueValidator(100)])
+    correctPath_feedback_on_feedback = models.TextField(blank=True, null=True)
+
 
     class Meta:
         managed = False

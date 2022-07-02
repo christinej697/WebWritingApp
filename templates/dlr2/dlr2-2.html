@@ -15,44 +15,68 @@ DLR Path 2 | Dispelling the Ideal Independent Voltage Source Misconception
         <div class="prob-display">
 
             <div class="problem-statement">
-                <p>In the circuits below, the same 10V ideal independent voltage source is connected to a 100 Ohm resistor (left circuit)
-                    and a 1000 Ohm resistor (right circuit). In both cases, the voltage source maintains a 10V potential difference across
-                    its terminals and thus across the sole resistor in each circuit. What is different about the two cases? Ohm's law
-                    reveals that the circuit in the left has a current of 100 mA (10 V/100 &ohm;), whereas that on the right only 10 mA (10 V/
-                    1000 &ohm;).</p>
+                <p>
+                    You will find at least one voltage source in almost every circuit you encounter in a basic circuit analysis course. Voltage sources are typically modeled as <u>ideal</u> <u>independent</u> voltage sources. To be sure, there are so-called dependent voltage sources, but such sources are depicted with a diamond instead of a circle. In the circuit we are considering, the voltage is an ideal independent source. Many errors in circuit analysis are made based on a misunderstanding of how to model an ideal independent voltage source. Let's make certain going forward that we understand the model. Consider the circuit below consisting of an ideal independent voltage source and a single resistor, <em>R</em>.
+                </p>
+    
+                <div class="right_fix">
+                    <div class="circuit-image page2-img">
+                        <img src="{% static 'svg/Circuit_with_only_Vs_and_R.svg' %}" width="225" />
+                    </div>
+                </div>
+
+                <hr class="divide">
+
+                <figure>
+                    <figcaption><em>Select all of the following that are true regarding the circuit above.</em></figcaption>
+                    <ol type="a" class="selection">
+                        <li>The voltage source provides energy and the resistor dissipates energy.</li>
+                        <li>The voltage source is best considered a source of constant current.</li>
+                        <li>The voltage source is best considered a source of constant power.</li>
+                    </ol>
+                </figure>
+
+                <hr class="divide">
+
+                <p>
+                    Let's look into the notion of an ideal independent voltage source by making a couple of basic calculations.
+                </p>
+
+                <p>
+                    In the circuits below, the <u>same</u> <em>10V</em> ideal independent voltage source is connected to a <em>100 Ohm</em> resistor (left circuit) and a <em>1000 Ohm</em> resistor (right circuit). In both cases, the voltage source maintains a <em>10V</em> potential difference across its terminals and thus across the sole resistor in each circuit. What is different about the two cases? Ohm's law reveals that the circuit in the left has a current of <em>100 mA</em> (<em>10 V/100 &ohm;</em>), whereas that on the right only <em>10 mA</em> (<em>10 V/
+                    1000 &ohm;</em>).
+                </p>
             </div>
 
-            <div class="right">
+            <div class="right_fix">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Two_Circuits_with_only_Vs_and_R.svg' %}" width="550" />
                 </div>
 
             </div>
             
             <div class="problem-statement">
                 <p>
-                    In both cases, the potential difference across the voltage source is 10V with the plus side 10 V higher than the minus
-                    sign. The current associated with the source is different in the two cases. Thus, the correct way to model the ideal
-                    independent voltage source is just that, a source of a consistent potential difference across its terminals. The current
+                    In both cases, the potential difference across the voltage source is <em>10V</em> with the plus side <em>10V</em> higher than the minus
+                    sign. The current associated with the source is different in the two cases. Thus, the correct way to model the ideal independent voltage source is just that, a source of a consistent potential difference across its terminals. The current
                     associated with the voltage source will depend on the circuit to which the source is connected.
                 </p>
                 <p>
-                    What about power and the ideal independent voltage source? We know that for any element, P=VI. Therefore, for
-                    the circuit on the left, the ideal voltage source provides P= (10V)(0.1A)= 1 W of power. Since the circuit on the right
-                    has a current 1/10th that of the circuit on the left, the voltage source needs only to provide 0.1 W of power in that
+                    What about power and the ideal independent voltage source? We know that for any element, <em>P=VI</em>. Therefore, for
+                    the circuit on the left, the ideal voltage source provides <em>P = (10V)(0.1A) = 1 W</em> of power. Since the circuit on the right
+                    has a current <em>1/10th</em> that of the circuit on the left, the voltage source needs only to provide <em>0.1 W</em> of power in that
                     case.
                 </p>
                 <p>
                     To summarize, an ideal independent voltage source provides a specific potential difference across its terminals
                     regardless of the circuit to which it is connected. The current, and thus the power associated with the ideal
-                    independent voltage source will depend on the circuit to which the source is connected.
+                    independent voltage source, will depend on the circuit to which the source is connected.
                 </p>
             </div>
 
             <form method="post">{% csrf_token %}
                 <div class="sub-btn">
                     <input type="submit" class="prob-btn btn" id="prob-btn-2" name="Submit" value="Go to next misconception"/>
-                    <!-- <a class="prob-btn btn" id="prob-btn-2" href="#">Click to submit response once it is complete</a> -->
                 </div>
             </form>
 

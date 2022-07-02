@@ -15,26 +15,22 @@ DLR Path 2 | Dispelling the Ideal Independent Voltage Source Misconception
         <div class="prob-display">
 
             <div class="problem-statement">
-                <p>You will find at least one voltage source in almost every circuit you will encounter in a basic circuit analysis course.
-                    Voltage sources are typically modeled as ideal independent voltage sources. To be sure, there are so‐called
-                    dependent voltage sources, but such sources are depicted with a diamond instead of a circle. Many errors in circuit
-                    analysis are made based on a misunderstanding of how to model an ideal independent voltage source. Let’s make
-                    certain going forward that we understand the model. Consider the circuit below consisting of an ideal independent
-                    voltage source and a single resistor, R.</p>
+                <p>
+                    You will find at least one voltage source in almost every circuit you encounter in a basic circuit analysis course. Voltage sources are typically modeled as <u>ideal</u> <u>independent</u> voltage sources. To be sure, there are so-called dependent voltage sources, but such sources are depicted with a diamond instead of a circle. In the circuit we are considering, the voltage is an ideal independent source. Many errors in circuit analysis are made based on a misunderstanding of how to model an ideal independent voltage source. Let's make certain going forward that we understand the model. Consider the circuit below consisting of an ideal independent voltage source and a single resistor, <em>R</em>.
+                </p>
             </div>
 
-            <div class="right">
+            <div class="right_fix">
                 <div class="circuit-image page2-img">
-                    <img src="{% static 'svg/circuit.svg' %}" width="350"/>
+                    <img src="{% static 'svg/Circuit_with_only_Vs_and_R.svg' %}" width="225" height="auto"/>
                 </div>
-
             </div>
 
             <form method="post">{% csrf_token %}
 
                 <div class="drop-downs">
                     <div class="drop-down">
-                        <label for="Vs-summary">Select all of the following that are true regarding the circuit above.</label>
+                        <label for="Vs-summary"><em>Select all of the following that are true regarding the circuit above.</em></label>
                         {{ form.choice }}
                     </div>
                 </div>
